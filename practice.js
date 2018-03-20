@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr){
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+var last = function(arr) {
+  return arr[arr.length-1];
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,9 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+var looper = function(family){
+  family.forEach( x => alert(x));
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,8 +69,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
-
+function reversedLooper(letters){
+  for(var i= letters.length-1; i >=0; i--){
+    alert(letters[i]);
+  }
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -78,7 +87,9 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  return nums.filter(x => x%2===0);
+}
 
 
 ////////// EXTRA PRACTICE PROBLEMS BELOW //////////
@@ -95,7 +106,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  var evensArray = [];
+  var oddsArray = [];
+  for(i in numbersArray){
+    if(numbersArray[i]%2===0){
+      evensArray.push(numbersArray[i]);
+    }else{
+      oddsArray.push(numbersArray[i]);
+    }
+  }
+  return [evensArray, oddsArray];
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -116,6 +138,17 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+function finder(arr){
+  var x = getRandomArbitrary();
+  var isTrue = false;
+
+  for(i in arr){
+    if (arr[i] == x){
+      isTrue = true;
+    }
+  }
+  return isTrue;
+}
 
 
 
@@ -143,7 +176,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(arr, item){
+  for (var i = 0; i<arr.length; i++){
+    if (arr[i] == item){
+      arr.splice(i, 1);
+    }
+  }
+  return arr;
+}
 
+function addItem(myGroceryList, item){
+ myGroceryList.push(item);
+ return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -153,7 +198,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  var arr = [];
+  for (i =0; i<215; i++){
+    arr[i] = i+1;
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -169,7 +220,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen(num){
+  for (var i in num){
+    num[i] = Number(num[i]) + 10;
+  }
+  return num;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -194,6 +250,9 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function longer(arr1, arr2){
+    return (arr1 > arr2) ? arr1 : arr2;
+}
 
 
 
@@ -206,7 +265,17 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+var both = (arr1, arr2) => {
+  var out = [];
+  for (var i1 in arr1){
+    for (var i2 in arr2){
+      if(arr1[i1]==arr2[i2]){
+        out.push(arr1[i1]);
+      }
+    }
+  }
+  return out;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -246,7 +315,11 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(tyler);// = [tyler, cahlan, ryan, colt];
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+//console.log(devMountainEmployees.length);
 
 
 /*
@@ -255,6 +328,11 @@ var colt = {
 */
 
 //Code Here
+for (var i in devMountainEmployees){
+  if (devMountainEmployees[i].name =="Cahlan"){
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 
 
@@ -267,7 +345,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -286,8 +364,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+users.push(user1);
+users.push( {
+  name: "Ayler McGinnis",
+  email: "ayler@gmail.com",
+  password: "ayler",
+  username: "anfinite loop"
+})
+users.push({
+  name: "Byler McBinnis",
+  email: "byler@gmail.com",
+  password: "byler",
+  username: "binfiniteloop"
+})
 
-
+//console.log(users)
 
 /*
   Now you have a very common data structure. 
@@ -301,6 +392,12 @@ var user1 = {
 
 //Code Here
 
+for(var j = 0; j<4; j++){
+  if (users[j].email =="tylermcginnis33@gmail.com") {
+    users.splice(j, 1);
+    break;
+  }
+}
 
 
 /*
